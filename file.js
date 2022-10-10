@@ -1,6 +1,7 @@
 var http=require('http');
 var fs=require('fs');
 var url=require('url');
+const  PORT=process.env.PORT || 5000
 
 http.createServer(function(req,res)
 {
@@ -9,7 +10,7 @@ http.createServer(function(req,res)
 
     if(filename == './'){filename='./index';}
 
-    filename=filename+ ".html";
+    filename=filename+ ".html";f
     fs.readFile(filename,function(err,data){
 
         if(err){
@@ -22,5 +23,5 @@ http.createServer(function(req,res)
    
     return res.end();
     })
-}).listen(8583);
+}).listen(PORT);
 console.log("Sever Listening on port 8583");
